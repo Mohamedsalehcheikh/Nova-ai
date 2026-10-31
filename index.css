@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    @apply bg-nova-navy font-sans text-white antialiased;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-nova-cyan;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
+
+@layer components {
+  .container-nova {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-bold transition duration-200;
+  }
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-nova-blue to-nova-cyan text-white shadow-glow hover:brightness-110;
+  }
+  .btn-ghost {
+    @apply btn border border-nova-line bg-white/5 text-white hover:border-nova-cyan/60 hover:bg-white/10;
+  }
+  .card {
+    @apply rounded-2xl border border-nova-line bg-nova-card/80 p-5 transition duration-200 hover:border-nova-blue/60;
+  }
+  .section-title {
+    @apply text-2xl font-extrabold sm:text-3xl;
+  }
+  .section-sub {
+    @apply mt-2 text-nova-gray;
+  }
+}
